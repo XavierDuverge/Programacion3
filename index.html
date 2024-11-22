@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda</title>
+    <link rel="stylesheet" href="assets/css/lib/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/site/site.css" />
+</head>
+<body>
+    <header></header>
+    <main class="container-fluid">
+        <div id="content-container">
+            <div class="">
+                <div class="col-9 col-sm-12 col-md-8 offset-md-2 mt-3">
+                    <div class="card">
+                        <div class="card-header bg-primary text-light text-center">
+                            <h5>Datos personales</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="provincia" class="form-label">Provincia:</label>
+                                <input type="text" class="form-control" id="provincia" placeholder="Ingrese su provincia" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="ciudad" class="form-label">Ciudad:</label>
+                                <input type="text" class="form-control" id="ciudad" placeholder="Ingrese su ciudad" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="sector" class="form-label">Sector:</label>
+                                <input type="text" class="form-control" id="sector" placeholder="Ingrese su sector" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="calle" class="form-label">Calle:</label>
+                                <input type="text" class="form-control" id="calle" placeholder="Ingrese su calle" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="CarreraSelect" class="form-label">Carrera:</label>
+                                <select class="form-select" id="CarreraSelect">
+                                    <option value="" disabled selected>Seleccione una de las carreras</option>
+                                    <option value="Software">Software</option>
+                                    <option value="Ciberseguridad">Ciberseguridad</option>
+                                    <option value="Multimedia">Multimedia</option>
+                                </select>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-outline-primary" id="Enviar">Enviar</button>
+                                <button type="button" id="clearbutton" class="btn btn-outline-warning">Limpiar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-md-6 card mt-5">
+                    <div class="card">
+                        <div class="card-header bg-primary text-light text-center">
+                            <h5>Sección de materias</h5>
+                        </div>
+                        <div class="card-body " style="display: flex; justify-content: center; gap: 10px;">
+                            <button onclick="goBack()" class="btn-text" id="miBoton">Datos personales</button>
+                            <button onclick="irAConfirmacion()" class="btn-text" id="miBoton2">Confirmacion</button>
+                        </div>
+                        
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <!-- Materia 1: Fundamentos de la programación -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        Fundamentos de la programación
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="fundamentos" id="radio1" value="opcion1">
+                                            <label class="form-check-label" for="radio1">Ma 13:00 - 18:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="fundamentos" id="radio2" value="opcion2">
+                                            <label class="form-check-label" for="radio2">Lu 7:00 - 12:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="fundamentos" id="radio3" value="opcion3">
+                                            <label class="form-check-label" for="radio3">Mi 20:00 - 22:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <!-- Materia 2: Programación 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        Programación 1
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="programacion1" id="radio4" value="opcion4">
+                                            <label class="form-check-label" for="radio4">Vi 14:00 - 16:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="programacion1" id="radio5" value="opcion5">
+                                            <label class="form-check-label" for="radio5">Mi 14:00 - 18:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="programacion1" id="radio6" value="opcion6">
+                                            <label class="form-check-label" for="radio6">Ju 8:00 - 12:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <!-- Materia 3: Introducción a Bases de Datos -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                        Introducción a Bases de Datos
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="basesdedatos" id="radio7" value="opcion7">
+                                            <label class="form-check-label" for="radio7">Ma 10:00 - 12:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="basesdedatos" id="radio8" value="opcion8">
+                                            <label class="form-check-label" for="radio8">Vi 16:00 - 18:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="basesdedatos" id="radio9" value="opcion9">
+                                            <label class="form-check-label" for="radio9">Mi 13:00 - 18:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <!-- Materia 4: Programación 2 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                        Programación 2
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="programacion2" id="radio10" value="opcion10">
+                                            <label class="form-check-label" for="radio10">Ma 10:00 - 12:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="programacion2" id="radio11" value="opcion11">
+                                            <label class="form-check-label" for="radio11">Vi 16:00 - 18:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="programacion2" id="radio12" value="opcion12">
+                                            <label class="form-check-label" for="radio12">Mi 13:00 - 18:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <!-- Materia 5: Programación 3 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                        Programación 3
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="programacion3" id="radio13" value="opcion13">
+                                            <label class="form-check-label" for="radio13">Ma 10:00 - 12:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="programacion3" id="radio14" value="opcion14">
+                                            <label class="form-check-label" for="radio14">Vi 16:00 - 18:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="programacion3" id="radio15" value="opcion15">
+                                            <label class="form-check-label" for="radio15">Mi 13:00 - 18:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div style="text-align: right;">
+                                <button type="button" id="Aceptar" class="btn btn-outline-primary">Aceptar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       <!-- Form de confirmacion para finalizar -->
+<div class="container mt-5" id="form-confirmacion" style="display: none;">
+    <div class="card">
+        <div class="card-header bg-primary text-light text-center">
+            <h4>Confirmación</h4>
+            
+        </div>
+        <div class="card-body">
+            <div class="class="card-body  style="display: flex; justify-content: center; gap: 10px;">
+                <button onclick="goBack()" class="btn-text" id="btn-datos-personales">Datos personales</button>
+                <button onclick="irAConfirmacion()" class="btn-text" id="miBoton"2>Confirmacion</button>
+                <button onclick="VOlver()" class="btn-text" id="miBoton"2>Seccion de materias</button>
+                
+                
+            </div>
+            <h5>Datos básicos</h5>
+            <ul id="datos-personales" class="list-group">
+                <!-- Aquí se mostrarán los datos personales -->
+            </ul>
+
+            <h5 class="mt-4">Horarios seleccionados</h5>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Asignatura</th>
+                        <th>Horario</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-horarios">
+                    <!-- Aquí se mostrarán los horarios -->
+                </tbody>
+            </table>
+
+            <button id="finalizar" class="btn btn-primary float-end">Finalizar</button>
+        </div>
+    </div>
+</div>
+
+    
+        
+
+        <div id="content-materias" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-md-6 card mt-5">
+                    <div class="card">
+                        <div class="card-header bg-primary text-light text-center">
+                            <h5>Sección de materias</h5>
+                        </div>
+                        <div class="class="card-body  style="display: flex; justify-content: center; gap: 10px;">
+                            <button onclick="goBack()" class="btn-text" id="btn-datos-personales">Datos personales</button>
+                            <button onclick="irAConfirmacion2()" class="btn-text" id="miBoton3">Confirmacion</button>
+                            
+                        </div>
+                        <div class="accordion accordion-flush" id="accordionFlushExample-multimedia">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-heading-diseño-grafico">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-diseño-grafico" aria-expanded="false" aria-controls="flush-collapse-diseño-grafico">
+                                        Diseño Gráfico
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse-diseño-grafico" class="accordion-collapse collapse" aria-labelledby="flush-heading-diseño-grafico" data-bs-parent="#accordionFlushExample-multimedia">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-diseño-grafico" id="op1" value="opcion1">
+                                            <label class="form-check-label" for="op1">Ma 10:00 - 12:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-diseño-grafico" id="op2" value="opcion2">
+                                            <label class="form-check-label" for="op2">Ju 14:00 - 16:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-diseño-grafico" id="op3" value="opcion3">
+                                            <label class="form-check-label" for="op3">Vi 16:00 - 18:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-heading-edicion-video">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-edicion-video" aria-expanded="false" aria-controls="flush-collapse-edicion-video">
+                                        Edición de Video
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse-edicion-video" class="accordion-collapse collapse" aria-labelledby="flush-heading-edicion-video" data-bs-parent="#accordionFlushExample-multimedia">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-edicion-video" id="op4" value="opcion4">
+                                            <label class="form-check-label" for="op4">Lu 09:00 - 11:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-edicion-video" id="op5" value="opcion5">
+                                            <label class="form-check-label" for="op5">Ma 13:00 - 15:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-edicion-video" id="op6" value="opcion6">
+                                            <label class="form-check-label" for="op6">Ju 18:00 - 20:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-heading-fotografia-digital">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-fotografia-digital" aria-expanded="false" aria-controls="flush-collapse-fotografia-digital">
+                                        Fotografía Digital
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse-fotografia-digital" class="accordion-collapse collapse" aria-labelledby="flush-heading-fotografia-digital" data-bs-parent="#accordionFlushExample-multimedia">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-fotografia-digital" id="op7" value="opcion7">
+                                            <label class="form-check-label" for="op7">Mi 16:00 - 18:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-fotografia-digital" id="op8" value="opcion8">
+                                            <label class="form-check-label" for="op8">Ju 10:00 - 12:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-fotografia-digital" id="op9" value="opcion9">
+                                            <label class="form-check-label" for="op9">Vi 14:00 - 16:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-heading-animacion-digital">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-animacion-digital" aria-expanded="false" aria-controls="flush-collapse-animacion-digital">
+                                        Animación Digital
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse-animacion-digital" class="accordion-collapse collapse" aria-labelledby="flush-heading-animacion-digital" data-bs-parent="#accordionFlushExample-multimedia">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-animacion-digital" id="op10" value="opcion10">
+                                            <label class="form-check-label" for="op10">Ma 09:00 - 11:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-animacion-digital" id="op11" value="opcion11">
+                                            <label class="form-check-label" for="op11">Mi 14:00 - 16:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-animacion-digital" id="op12" value="opcion12">
+                                            <label class="form-check-label" for="op12">Vi 10:00 - 12:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-heading-produccion-audio">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-produccion-audio" aria-expanded="false" aria-controls="flush-collapse-produccion-audio">
+                                        Producción de Audio
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse-produccion-audio" class="accordion-collapse collapse" aria-labelledby="flush-heading-produccion-audio" data-bs-parent="#accordionFlushExample-multimedia">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-produccion-audio" id="op13" value="opcion13">
+                                            <label class="form-check-label" for="op13">Ju 12:00 - 14:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-produccion-audio" id="op14" value="opcion14">
+                                            <label class="form-check-label" for="op14">Vi 16:00 - 18:00</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="opciones-produccion-audio" id="op15" value="opcion15">
+                                            <label class="form-check-label" for="op15">Sa 10:00 - 12:00</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <button type="button" id="clear2" class="btn btn-outline-primary">Aceptar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!--Form de confirmacion para finalizarr-->
+         <div class="container mt-5" id="form-confirmacion3" style="display: none;" >
+            <div class="card">
+                <div class="card-header bg-success text-light text-center">
+                    <h4>Confirmación</h4>
+                </div>
+                <div class="card-body">
+                    <div class="class="card-body  style="display: flex; justify-content: center; gap: 10px;">
+                        <button onclick="goBack()" class="btn-text" id="btn-datos-personales">Datos personales</button>
+                        <button onclick="irAConfirmacion4()" class="btn-text" id="miBoton4">Confirmacion</button>
+                        <button onclick="VOlver2()" class="btn-text" id="miBoton"2>Seccion de materias</button>
+                        
+                    </div>
+                    <h5>Datos básicos</h5>
+                    <ul id="datos-personales" class="list-group">
+                        <!-- Aquí se mostrarán los datos personales -->
+                    </ul>
+    
+                    <h5 class="mt-4">Horarios seleccionados</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Asignatura</th>
+                                <th>Horario</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-horarios">
+                            <!-- Aquí se mostrarán los horarios -->
+                        </tbody>
+                    </table>
+    
+                    <button id="finalizar" class="btn btn-success float-end">Finalizar</button>
+                </div>
+            </div>
+        </div>
+
+           <!--CiberSEGURIDAD Formulario de confirmación -->
+<div class="container mt-5" id="form-confirmacion2" style="display: none;">
+    <div class="card">
+        <div class="card-header bg-primary text-light text-center">
+            <h4>Confirmación</h4>
+        </div>
+        <div class="card-body">
+            <div class="class="card-body  style="display: flex; justify-content: center; gap: 10px;">
+                <button onclick="goBack()" class="btn-text" id="btn-datos-personales">Datos personales</button>
+                <button onclick="irAConfirmacion3()" class="btn-text" id="miBoton4">Confirmacion</button>
+                <button onclick="VOlver3()" class="btn-text" id="miBoton"2>Seccion de materias</button>
+                
+                
+            </div>
+            <h5>Datos básicos</h5>
+            <ul id="datos-personales2" class="list-group">
+                <!-- Aquí se mostrarán los datos personales -->
+            </ul>
+
+            <h5 class="mt-4">Horarios seleccionados</h5>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Asignatura</th>
+                        <th>Dia</th>
+                        <th>Horario</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-horarios2">
+                    <!-- Aquí se mostrarán los horarios -->
+                </tbody>
+            </table>
+
+            <button id="finalizar1" class="btn btn-primary float-end">Finalizar</button>
+        </div>
+    </div>
+</div>
+
+        
+        
+<div id="content-twu" style="display: none;">
+    <div class="row justify-content-center">
+        <div class="col-md-6 card mt-5">
+            <div class="card">
+                <div class="card-header bg-primary text-light text-center">
+                    <h5>Sección de materias</h5>
+                </div>
+                <div class="class="card-body  style="display: flex; justify-content: center; gap: 10px;">
+                    <button onclick="goBack()" class="btn-text" id="btn-datos-personales">Datos personales</button>
+                    <button onclick="irAConfirmacion3()" class="btn-text" id="miBoton4">Confirmacion</button>
+                    
+                </div>
+                <div class="accordion accordion-flush" id="accordionFlushExample-twu">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingtwu">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-twu" aria-expanded="false" aria-controls="flush-collapse-twu">
+                                Fundamentos a la Ciberseguridad
+                            </button>
+                        </h2>
+                        <div id="flush-collapse-twu" class="accordion-collapse collapse" aria-labelledby="flush-headingtwu" data-bs-parent="#accordionFlushExample-twu">
+                            <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-fundamentos" id="radio8" value="opcion8">
+                                    <label class="form-check-label" for="radio8">Ma 13:00 - 18:00</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-fundamentos" id="radio9" value="opcion9">
+                                    <label class="form-check-label" for="radio9">Lu 7:00 - 12:00</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-fundamentos" id="radio10" value="opcion10">
+                                    <label class="form-check-label" for="radio10">Ju 18:00 - 20:00</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo-twu">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo-twu" aria-expanded="false" aria-controls="flush-collapseTwo-twu">
+                                Criptografía Básica
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo-twu" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo-twu" data-bs-parent="#accordionFlushExample-twu">
+                            <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-criptografia" id="radio11" value="opcion11">
+                                    <label class="form-check-label" for="radio11">Vi 14:00 - 16:00</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-criptografia" id="radio12" value="opcion12">
+                                    <label class="form-check-label" for="radio12">Ju 8:00 - 10:00</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-criptografia" id="radio13" value="opcion13">
+                                    <label class="form-check-label" for="radio13">Lu 10:00 - 12:00</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree-twu">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree-twu" aria-expanded="false" aria-controls="flush-collapseThree-twu">
+                                Redes Seguras
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree-twu" class="accordion-collapse collapse" aria-labelledby="flush-headingThree-twu" data-bs-parent="#accordionFlushExample-twu">
+                            <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-redes" id="radio14" value="opcion14">
+                                    <label class="form-check-label" for="radio14">Ma 10:00 - 12:00</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-redes" id="radio15" value="opcion15">
+                                    <label class="form-check-label" for="radio15">Vi 16:00 - 18:00</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-redes" id="radio16" value="opcion16">
+                                    <label class="form-check-label" for="radio16">Sa 10:00 - 12:00</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour-twu">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour-twu" aria-expanded="false" aria-controls="flush-collapseFour-twu">
+                                Circuito
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFour-twu" class="accordion-collapse collapse" aria-labelledby="flush-headingFour-twu" data-bs-parent="#accordionFlushExample-twu">
+                            <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-circuito" id="radio17" value="opcion17">
+                                    <label class="form-check-label" for="radio17">Ma 10:00 - 12:00</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-circuito" id="radio18" value="opcion18">
+                                    <label class="form-check-label" for="radio18">Vi 16:00 - 18:00</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-circuito" id="radio19" value="opcion19">
+                                    <label class="form-check-label" for="radio19">Ju 18:00 - 20:00</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFive-twu">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive-twu" aria-expanded="false" aria-controls="flush-collapseFive-twu">
+                                Matemáticas
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFive-twu" class="accordion-collapse collapse" aria-labelledby="flush-headingFive-twu" data-bs-parent="#accordionFlushExample-twu">
+                            <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-matematicas" id="radio20" value="opcion20">
+                                    <label class="form-check-label" for="radio20">Lu 09:00 - 11:00</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-matematicas" id="radio21" value="opcion21">
+                                    <label class="form-check-label" for="radio21">Mi 14:00 - 16:00</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opciones-matematicas" id="radio22" value="opcion22">
+                                    <label class="form-check-label" for="radio22">Ju 10:00 - 12:00</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: right;">
+                        <button type="button" id="clear" class="btn btn-outline-primary">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+      
+        
+    </main>
+    <footer></footer>
+
+    <script src="assets/js/site/index.js"></script>
+    <script src="assets/css/lib/bootstrap/bootstrap.min.css"></script>
+</body>
+</html>
